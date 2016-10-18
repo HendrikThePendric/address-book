@@ -1,0 +1,13 @@
+$module: 'add-contact';
+
+.#{$module} {
+    
+    form {
+        background-color: #ffffff;
+        padding: 1em;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+        height: 272px;
+        max-width: 290px;
+    }
+}
