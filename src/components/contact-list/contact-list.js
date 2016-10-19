@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Reorder from 'react-reorder';
-import {List, ListItem} from 'material-ui/List';
+import {ListItem} from 'material-ui/List';
 import {CUSTOM_ASC} from '../app-constants';
 
 const SortListItem = ({item: {firstName, lastName, phone, sortDisabled}}) => {

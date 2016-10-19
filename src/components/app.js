@@ -16,7 +16,7 @@ export default class App extends Component {
         this.state = {
             contacts: JSON.parse(localStorage.getItem('contacts')) || mockContacts,
             sortBy: JSON.parse(localStorage.getItem('sortBy')) || L_NAME_ASC
-        }
+        };
     }
 
     shiftSequenceNumbers(contacts) {
@@ -27,7 +27,7 @@ export default class App extends Component {
     }
 
     addContact(newContact) {
-        const shiftedCurrentContacts = this.shiftSequenceNumbers(this.state.contacts)
+        const shiftedCurrentContacts = this.shiftSequenceNumbers(this.state.contacts);
         let newContacts = [newContact, ...shiftedCurrentContacts];
         if (this.state.sortBy !== CUSTOM_ASC) {
             newContacts = this.sortContactsBy(newContacts, this.state.sortBy);
@@ -70,20 +70,20 @@ export default class App extends Component {
     sortContactsBy(contacts, sortProp) {
         return contacts.sort((a, b) => {
             switch (sortProp) {
-                case F_NAME_ASC:
-                    return this.compare(a.firstName, b.firstName);
-                case F_NAME_DESC:
-                    return this.compare(b.firstName, a.firstName);
-                case L_NAME_ASC:
-                    return this.compare(a.lastName, b.lastName);
-                case L_NAME_DESC:
-                    return this.compare(b.lastName, a.lastName);
-                case PHONE_ASC:
-                    return this.compare(a.phone, b.phone);
-                case PHONE_DESC:
-                    return this.compare(b.phone, a.phone);
-                case CUSTOM_ASC:
-                    return a.sequenceId - b.sequenceId;
+            case F_NAME_ASC:
+                return this.compare(a.firstName, b.firstName);
+            case F_NAME_DESC:
+                return this.compare(b.firstName, a.firstName);
+            case L_NAME_ASC:
+                return this.compare(a.lastName, b.lastName);
+            case L_NAME_DESC:
+                return this.compare(b.lastName, a.lastName);
+            case PHONE_ASC:
+                return this.compare(a.phone, b.phone);
+            case PHONE_DESC:
+                return this.compare(b.phone, a.phone);
+            case CUSTOM_ASC:
+                return a.sequenceId - b.sequenceId;
             }
         });
     }

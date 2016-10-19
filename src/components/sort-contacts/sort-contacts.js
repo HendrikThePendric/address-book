@@ -19,7 +19,7 @@ export default class SelectFieldExampleFloatingLabel extends Component {
         super(props);
         this.state = {
             currSortProp: props.currSortProp
-        }
+        };
     }
 
     handleChange (event, index, value) {
